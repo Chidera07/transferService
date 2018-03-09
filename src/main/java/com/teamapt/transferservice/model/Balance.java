@@ -23,7 +23,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class Balance {
     @TableGenerator(name = "Acc_Gen", initialValue = 10000, allocationSize = 100)
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "Address_Gen")
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "Acc_Gen")
     private int acc_nr;
     
     @NotBlank
