@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface BalanceRepository extends JpaRepository<Balance, String>{
+public interface BalanceRepository extends JpaRepository<Balance, Integer>{
     
 }

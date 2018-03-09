@@ -17,6 +17,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
@@ -27,14 +29,15 @@ public class Transaction implements Serializable {
     @Id
     private UUID reference = UUID.randomUUID();
     
-    @NotBlank
+    @NotNull
     private float amount;
     
-    @NotBlank
-    private String acc_nr;
+    @NotNull
+    private int acc_nr;
     
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
+    @CreatedDate
     private Date createdAt;
 
     public UUID getReference() {
@@ -49,11 +52,11 @@ public class Transaction implements Serializable {
         this.amount = amount;
     }
 
-    public String getAcc_nr() {
+    public int getAcc_nr() {
         return acc_nr;
     }
 
-    public void setAcc_nr(String acc_nr) {
+    public void setAcc_nr(int acc_nr) {
         this.acc_nr = acc_nr;
     }
 

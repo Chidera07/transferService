@@ -21,12 +21,12 @@ public class BalanceController {
     @Autowired
     BalanceRepository balanceRepository;
     
-    @GetMapping("/")
+    @GetMapping("")
     public List<Balance> getAllBalances(){
         return balanceRepository.findAll();
     }
     
-    @PostMapping("/")
+    @PostMapping("")
     public Balance addBalance(@Valid @RequestBody Balance balance){
         return balanceRepository.save(balance);
     }

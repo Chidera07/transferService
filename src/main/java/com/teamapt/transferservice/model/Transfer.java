@@ -6,19 +6,43 @@
 package com.teamapt.transferservice.model;
 
 import java.io.Serializable;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 
 public class Transfer implements Serializable {
     
-    @NotBlank
+    @NotNull
     private int from;
     
-    @NotBlank
+    @NotNull
     private int to;
     
-    @NotBlank
+    @NotNull
     private long amount;
+
+    public int getFrom() {
+        return from;
+    }
+
+    public void setFrom(int from) {
+        this.from = from;
+    }
+
+    public int getTo() {
+        return to;
+    }
+
+    public void setTo(int to) {
+        this.to = to;
+    }
+
+    public long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(long amount) {
+        this.amount = amount;
+    }
     
     
 }
